@@ -165,10 +165,6 @@ void moveToken(KeyboardKey key)
 
 	token.data.swap(empty.data);
 
-	/*auto dataTemp = std::move(token.data);
-	token.data = std::move(empty.data);
-	empty.data = std::move(dataTemp);*/
-
 	emptyToken.row = token.row;
 	emptyToken.col = token.col;
 }
@@ -200,7 +196,6 @@ int main ()
 			board[row][col].data = std::move(token);
 			board[row][col].row = row;
 			board[row][col].col = col;
-			//board[row][col].frame = Rectangle{row * TOKEN_SIZE,col * TOKEN_SIZE, TOKEN_SIZE, TOKEN_SIZE};
 			board[row][col].pos = Vector2{ row * TOKEN_SIZE, col * TOKEN_SIZE};
 		}
 	}
